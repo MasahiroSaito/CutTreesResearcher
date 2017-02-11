@@ -13,6 +13,7 @@ class CutTreesBreakEventListener : Listener {
         val player = event.player
 
         player.player.sendMessage(buildString {
+            append("【Tree】")
             append("Blocks: ${tree.blocks.size}").append(", ")
             append("Leaves: ${tree.leaves.size}")
         })
