@@ -1,0 +1,7 @@
+name: CutTreesResearcher
+version: @version@
+main: com.masahirosaito.spigot.cuttreesresearcher.CutTreesResearcher
+prefix: CutTreesResearcher
+loadbefore: [CutTrees]
+authors: [MasahiroSaito]
+website: https://github.com/MasahiroSaito/CutTreesResearcher
