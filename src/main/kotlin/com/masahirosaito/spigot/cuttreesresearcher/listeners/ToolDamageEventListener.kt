@@ -10,6 +10,8 @@ class ToolDamageEventListener : Listener {
 
     @EventHandler(priority = EventPriority.MONITOR)
     fun onToolDamage(event: CutTreesToolDamageEvent) {
+        if (event.isCancelled) return
+
         val player = event.player
         val tool = player.tool
 
@@ -18,6 +20,12 @@ class ToolDamageEventListener : Listener {
             append("CanBeDamaged: ${tool.canBeDamaged()}").append(", ")
             append("Damage: ${tool.calcDamage(event.tree)}").append(", ")
             append("Durability: ${tool.itemStack.getRemainingDurability()}")
+
+            player.DamageToTool(event.tree)
+
+            append(" -> ${tool.itemStack.getRemainingDurability()}")
         })
+
+        event.cancel()
     }
 }
